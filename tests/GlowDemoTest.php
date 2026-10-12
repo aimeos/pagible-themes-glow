@@ -97,6 +97,7 @@ class GlowDemoTest extends ThemeTestAbstract
 
         $this->get( '/team' )->assertSee( 'Lukas Petersen' );
         $this->get( '/membership' )->assertSee( 'What members pay' );
+        $this->get( '/gift-cards' )->assertSee( 'Give an hour of <em>glow</em>', false );
         $this->get( '/winter-skin' )->assertSee( 'Questions from our clients' );
     }
 
@@ -107,7 +108,7 @@ class GlowDemoTest extends ThemeTestAbstract
 
         $response->assertOk();
         $response->assertSee( 'The full menu' );
-        $response->assertSee( 'Brazilian <code>bestseller</code> <strong>55</strong>', false );
+        $response->assertSee( 'Brazilian <code>bestseller</code> <strong>€55</strong>', false );
     }
 
 

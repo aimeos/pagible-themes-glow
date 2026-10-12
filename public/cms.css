@@ -265,9 +265,23 @@ header nav details.is-menu[open] > summary:not([role]) {
     border: 0;
 }
 
+header nav ul.menu > li:not(.book, .login) > a,
+header nav details.is-menu > summary:not([role]) {
+    text-decoration: underline 2px #A2456B00;
+    text-underline-offset: 0.5em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+header nav ul.menu > li:not(.book, .login) > a:is(:hover, :focus-visible),
+header nav details.is-menu > summary:not([role]):is(:hover, :focus-visible) {
+    text-decoration: underline 2px #A2456B59;
+    text-underline-offset: 0.5em;
+}
+
 header nav ul.menu > li:not(.book, .login) > a.active,
 header nav details.is-menu > summary.active:not([role]) {
-    background: radial-gradient(circle, var(--pico-primary) 2px, #00000000 2.5px) center bottom 0.1rem / 6px 6px no-repeat;
+    text-decoration: underline 2px var(--pico-primary);
+    text-underline-offset: 0.5em;
 }
 
 header nav ul.menu > li.book > a {
